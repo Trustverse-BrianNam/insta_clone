@@ -44,12 +44,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Log.d("ff","ff")
 
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode==GOOGLE_LOGIN_CODE){
             var result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
-            Log.d("ff","ff")
 
             if(result!!.isSuccess){
                 var account = result.signInAccount
@@ -110,7 +108,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun moveMainPage(user: FirebaseUser?){//login 성공 시 다음 페이지로 넘어 가는 함수
         if(user !=null){//fire base user상태가 있을 경우 다음페이지로 넘어감
-            startActivity(Intent(this,MainActivity::class.java))//mainactivity를 호출 하는 코드
+            startActivity(Intent(this, MainActivity::class.java))//mainactivity를 호출 하는 코드
 
         }
 
